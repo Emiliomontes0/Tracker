@@ -3,10 +3,9 @@ package com.Tracker.Tracker.Controller;
 import com.Tracker.Tracker.Entity.Product;
 import com.Tracker.Tracker.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Product")
@@ -18,5 +17,9 @@ public class ProductController {
     public String add(@RequestBody Product product){
         productService.saveProduct(product);
         return "New Product is added";
+    }
+    @GetMapping("/getAll")
+    public List<Product> getAllProducts(){
+        return productService.getAllProducts();
     }
 }
