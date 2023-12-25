@@ -10,16 +10,22 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private  int Price;
+    private  int price;
     private String item;
     private int count;
 
+    public Product (int id, int price, String item, int count){
+        this.id=id;
+        this.price=price;
+        this.item=item;
+        this.count=count;
+    }
     public int getPrice() {
-        return Price;
+        return price;
     }
 
     public void setPrice(int price) {
-        Price = price;
+        price = price;
     }
 
     public String getItem() {
