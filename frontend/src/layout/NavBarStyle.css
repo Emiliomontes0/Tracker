@@ -1,0 +1,5 @@
+.container-nav{
+    display: flex;
+    border-color: red;
+    border-style: dashed;
+}

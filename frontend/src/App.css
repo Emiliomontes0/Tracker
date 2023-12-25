@@ -1,0 +1,6 @@
+.App {
+    display: flex;
+    border-color: red;
+    border-style: dashed;
+    flex-direction: column;
+}
