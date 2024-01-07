@@ -14,6 +14,7 @@ public class Product {
     private String item;
     private int count;
 
+    public Product(){}
     public Product (int id, int price, String item, int count){
         this.id=id;
         this.price=price;
@@ -25,7 +26,7 @@ public class Product {
     }
 
     public void setPrice(int price) {
-        price = price;
+        this.price = price;
     }
 
     public String getItem() {

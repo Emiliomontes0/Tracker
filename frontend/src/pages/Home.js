@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
 
 export default function Home() {
   const [users, setUsers] = useState([]);
-
-  const { id } = useParams();
 
   useEffect(() => {
     loadUsers();
@@ -14,11 +11,6 @@ export default function Home() {
   const loadUsers = async () => {
     const result = await axios.get("http://localhost:8080/product");
     setUsers(result.data);
-  };
-
-  const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:8080/product/${id}`);
-    loadUsers();
   };
 
   return (
@@ -40,29 +32,9 @@ export default function Home() {
                 <th scope="row" key={index}>
                   {index + 1}
                 </th>
-                <td>{product.name}</td>
-                <td>{product.username}</td>
-                <td>{product.email}</td>
-                <td>
-                  <Link
-                    className="btn btn-primary mx-2"
-                    to={`/viewproduct/${product.id}`}
-                  >
-                    View
-                  </Link>
-                  <Link
-                    className="btn btn-outline-primary mx-2"
-                    to={`/editproduct/${product.id}`}
-                  >
-                    Edit
-                  </Link>
-                  <button
-                    className="btn btn-danger mx-2"
-                    onClick={() => deleteUser(product.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+                <td>{product.price}</td>
+                <td>{product.item}</td>
+                <td>{product.count}</td>
               </tr>
             ))}
           </tbody>

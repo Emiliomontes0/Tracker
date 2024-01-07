@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("localhost:3000")
+@CrossOrigin("http://localhost:3000")
 public class ProductController {
     @Autowired
     private ProductService productService;
@@ -15,7 +15,7 @@ public class ProductController {
     @PostMapping("/addProduct")
     public String add(@RequestBody Product product){
         productService.saveProduct(product);
-        return "New Product is added";
+        return "Done";
     }
     @GetMapping("/product")
     public List<Product> getAllProducts(){
