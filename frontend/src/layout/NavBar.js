@@ -1,5 +1,6 @@
 import React from "react";
 import './NavBarStyle.css';
+import { Link }from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -18,7 +19,7 @@ export default function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <button className="btn btn-outline-light">Add product</button>
+          <Link className="btn btn-outline-light" to="/addProduct">Add product</Link>
         </div>
       </nav>
     </div>
